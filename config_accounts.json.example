@@ -1,0 +1,15 @@
+{
+  "accounts": [
+    {
+      "number": 888800553535,
+      "assigned_to": [
+        -1009000
+      ],
+      "reply_template": {
+        "mode": "peg",
+        "text": "This an example message for PyTeleBotter configuration file. This tool allows you to automatically {reply to new posts|leave comments} in many channels from many accounts."
+      },
+      "channel_layer": false
+    }
+  ]
+}

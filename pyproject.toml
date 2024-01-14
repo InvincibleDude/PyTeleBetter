@@ -1,0 +1,67 @@
+[tool.poetry]
+name = "pytelebotter"
+version = "0.1.0"
+description = ""
+authors = ["InvincibleDude"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+tortoise-orm = "^0.20.0"
+TgCrypto = "^1.2.3"
+Pyrogram = "^2.0.0"
+parsimonious = "^0.9.0"
+regex = "^2022.4.24"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.12.1"
+ruff = "^0.1.13"
+pre-commit = "^3.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+line-length = 88
+indent-width = 4
+
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    # isort
+    "I",
+]
+
+[tool.poetry.scripts]
+main = "pytelebotter.main:main"

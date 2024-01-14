@@ -1,0 +1,12 @@
+sessions/**
+images
+.venv
+**/*.sqlite3
+orm/orm_config.json
+config_accounts.json
+__pycache__
+unknown_errors.txt
+.env
+*.sqlite3-shm
+*.sqlite3-wal
+.ruff_cache

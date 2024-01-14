@@ -1,0 +1,8 @@
+expr    = (opening variant* closing)
+
+opening = "{"
+closing = "}"
+
+variant = text "|"?
+
+text = ~"[A-Z 0-9 \' \,]*"i
