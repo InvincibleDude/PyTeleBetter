@@ -43,6 +43,14 @@ async def setup_account(
     logger.info(f"Setting up account {app.phone_number}")
     account = await app.get_me()
 
+    if config.get("account_name", False):
+        await app.update_profile(first_name=config["account_name"], last_name="")
+
+    if config.get("account_description", False):
+        await app.update_profile(
+            bio=config["account_description"],
+        )
+
     if not bool(config["channel_layer"]):
         logger.info(f"Skipping channel layer setup for account {app.phone_number}")
     elif not await pytelebotter.orm.ChannelLayer.exists(owner=account.id):
@@ -98,7 +106,7 @@ class Handler:
         )
         await message_discussion.reply(parse_and_randomize(self.text))
         logger.info(
-            f"Send a message to {message.chat.title} as account {client.phone_number}"
+            f"Sent a message to {message.chat.title} as account {client.phone_number}"
         )
 
     async def auto_reply_py(self, client: Client, message: pyrogram.types.Message):

@@ -19,7 +19,7 @@ def main():
         accounts = parse_accounts_config()
 
         clients = await generate_clients(accounts)
-        print(clients)
+
         for i, j in enumerate(clients):
             await j.start()
             account = accounts["accounts"][i]

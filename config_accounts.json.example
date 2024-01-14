@@ -5,6 +5,8 @@
       "assigned_to": [
         -1009000
       ],
+      "account_name": "John Doe",
+      "account_description": "Hi, i'm John Doe!",
       "reply_template": {
         "mode": "peg",
         "text": "This an example message for PyTeleBotter configuration file. This tool allows you to automatically {reply to new posts|leave comments} in many channels from many accounts."

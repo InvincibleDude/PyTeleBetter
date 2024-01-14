@@ -18,15 +18,14 @@ async def channel_layer_setup(
         f"Channel layer for {app.phone_number} does not exists. Creating a new one"
     )
     layer_config = parse_accounts_config()["accounts"][index - 1]["channel_layer"]
-    # (0|{index}) - chooses a photos that are assigned to all (0) or to specific account ({index})
+    # (all|{index}) - chooses a photos that are assigned to all (0) or to specific account ({index})
     # (pfp|clp|ptsw):
     #   pfp - profile picture
     #   clprofile - channel layer profile picture
     #   clpost - channel layer profile post pics
-    #   ptsw - photos to spam with
     # ([0-9]) - index of photo (e.g. [0_ptsw_1.jpg, 0_ptsw_2.jpg])
     compiled_regex = regex.compile(
-        rf"(0|{index})_(pfp|clprofile|clpost|ptsw)_(\d)(?>.)(png|jpg)"
+        rf"(all|{index})_(pfp|clprofile|clpost|ptsw)_(\d)(?>.)(png|jpg)"
     )
 
     channel = None

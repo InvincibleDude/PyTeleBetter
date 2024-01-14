@@ -14,9 +14,11 @@ class ReplyTemplate(TypedDict):
 class Account(TypedDict):
     number: int | None
     session_string: str | None
+    account_name: str | None
+    account_description: str | None
     assigned_to: list[int | str]
     reply_template: ReplyTemplate
-    channel_layer: bool | "ChannelLayer"
+    channel_layer: bool or "ChannelLayer"
 
 
 class ChannelLayer(TypedDict):
